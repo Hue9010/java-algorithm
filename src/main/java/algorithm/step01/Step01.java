@@ -1,9 +1,5 @@
 package algorithm.step01;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class Step01 {
 
 	public static int solution(String str) {
@@ -17,12 +13,9 @@ public class Step01 {
 	}
 
 	public static int checkPrimeNumber(int number, int divisionNumber) {
-		if (number == 1) {
-			return 0;
-		}
-		if (number / 2 < divisionNumber) {
-			return 1;
-		}
-		return number % divisionNumber == 0 ? 0 : checkPrimeNumber(number, divisionNumber + 1);
+		return number == 1 ?
+				0 : number / 2 < divisionNumber ?
+						1 : number % divisionNumber == 0 ? 
+								0 : checkPrimeNumber(number, divisionNumber + 1);
 	}
 }
