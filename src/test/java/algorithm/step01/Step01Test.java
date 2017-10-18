@@ -14,10 +14,12 @@ public class Step01Test {
 
 	@Test
 	public void 소수구하는_메소드() {
-		assertEquals(1, Step01.findPrimeNumber(2));
-		assertEquals(1, Step01.findPrimeNumber(3));
-		assertEquals(0, Step01.findPrimeNumber(4));
-		assertEquals(1, Step01.findPrimeNumber(5));
+		assertEquals(1, Step01.checkPrimeNumber(2, 2));
+		assertEquals(1, Step01.checkPrimeNumber(3, 2));
+		assertEquals(0, Step01.checkPrimeNumber(4, 2));
+		assertEquals(1, Step01.checkPrimeNumber(5, 2));
+		assertEquals(0, Step01.checkPrimeNumber(9, 2));
+		assertEquals(0, Step01.checkPrimeNumber(10, 2));
 	}
 
 }

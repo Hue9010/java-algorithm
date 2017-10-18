@@ -11,20 +11,18 @@ public class Step01 {
 		String[] numbers = strArr[1].split(" ");
 		int count = 0;
 		for (int i = 0; i < Integer.parseInt(strArr[0]); i++) {
-			count += findPrimeNumber(Integer.parseInt(numbers[i]));
+			count += checkPrimeNumber(Integer.parseInt(numbers[i]), 2);
 		}
 		return count;
 	}
 
-	public static int findPrimeNumber(int number) {
+	public static int checkPrimeNumber(int number, int divisionNumber) {
 		if (number == 1) {
 			return 0;
 		}
-		for (int i = 2; i <= number / 2; i++) {
-			if (number % i == 0) {
-				return 0;
-			}
+		if (number / 2 < divisionNumber) {
+			return 1;
 		}
-		return 1;
+		return number % divisionNumber == 0 ? 0 : checkPrimeNumber(number, divisionNumber + 1);
 	}
 }
